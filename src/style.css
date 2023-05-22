@@ -2,23 +2,12 @@ body {
   background: #406882;
   font-family: "Courier New", Courier, monospace;
 }
-.weather {
-  max-width: 600px;
-  border: 1px solid #dadde1;
-  border-radius: 10px;
-  margin: 30px auto;
-  padding: 20px;
-}
+
 h1 {
   font-size: 30px;
   font-weight: 600;
   line-height: 28px;
   margin-bottom: 0;
-}
-
-.current-date {
-  margin: 0;
-  padding: 0;
 }
 
 li {
@@ -28,4 +17,37 @@ li {
   font-size: 18px;
   font-weight: 100;
   line-height: 21px;
+}
+
+.weather-wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
+.weather {
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.current-overview {
+  margin-bottom: 20px;
+}
+.current-date {
+  margin: 0;
+  padding: 0;
+}
+.current {
+  font-size: 50px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.temp-units {
+  position: relative;
+  font-size: 16px;
+}
+.temperature img {
+  margin-left: 30px;
+  height: 70px;
+  width: 70px;
 }
