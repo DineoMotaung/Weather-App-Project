@@ -1,75 +1,31 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
 body {
-  background: linear-gradient(#406882, #6998ab, #b1d0e0);
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  max-width: 100%;
+  background: #406882;
   font-family: "Courier New", Courier, monospace;
 }
-h1,
-h2 {
-  text-align: center;
-}
-
-h3 {
-  font-size: 15px;
-}
-
-input {
-  color: #000;
-  font-weight: 600;
-  border: none;
-  outline: #6998ab;
-  font-size: 18px;
-  padding: 10px;
-}
-
-ul {
-  list-style-type: none;
-}
-
-footer {
-  text-align: center;
-  font-size: 16px;
-}
-a:link {
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-.container {
-  border: 1px solid #000;
+.weather {
+  max-width: 600px;
+  border: 1px solid #dadde1;
   border-radius: 10px;
-  align-content: center;
-  justify-content: center;
-  padding: 25px;
-  margin: 30px;
+  margin: 30px auto;
+  padding: 20px;
+}
+h1 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 28px;
+  margin-bottom: 0;
 }
 
-.current-forecast {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  position: relative;
-  padding: 40px auto;
-  margin: 0 auto;
-  align-items: center;
+.current-date {
+  margin: 0;
+  padding: 0;
 }
 
-.temperature {
-  font-size: 25px;
-}
-
-.day {
-  border: 1px solid #000;
-  text-align: center;
-  padding: 20px 0;
-  margin: 0 auto;
-  border-radius: 5px;
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 21px;
 }
