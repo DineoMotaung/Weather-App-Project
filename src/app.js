@@ -23,6 +23,7 @@ function formatDate(now) {
   return `${day} ${hour}:${minutes}`;
 }
 function showTemperature(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.temperature.current
@@ -37,6 +38,13 @@ function showTemperature(response) {
   document.querySelector("#feels-like").innerHTML = Math.round(
     response.data.temperature.feels_like
   );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    );
+  icon.setAttribute("alt", response.data.condition.description);
 }
 
 function searchCity(city) {
