@@ -43,10 +43,25 @@ li {
   font-weight: 500;
 }
 
-.temp-units {
+.temperature .units {
   position: relative;
   font-size: 16px;
+  text-decoration: none;
 }
+
+.temperature .active {
+  color: #000;
+  cursor: default;
+}
+
+.temperature .active:hover {
+  text-decoration: none;
+}
+
+.units a {
+  text-decoration: none;
+}
+
 .temperature img {
   margin-left: 30px;
   height: 80px;

@@ -23,11 +23,12 @@ function formatDate(now) {
   return `${day} ${hour}:${minutes}`;
 }
 function showTemperature(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
-  document.querySelector("#current-temp").innerHTML = Math.round(
-    response.data.temperature.current
-  );
+  let temperature = document.querySelector("#current-temp");
+
+  celsiusTemperature = response.data.temperature.current;
+
+  temperature.innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#description").innerHTML =
     response.data.condition.description;
   document.querySelector("#humidity").innerHTML =
@@ -73,14 +74,19 @@ function getCurrent(event) {
 
 function changeFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemperature = document.querySelector("#current-temp");
-  fahrenheitTemperature.innerHTML = 80;
+  linkCelsius.classList.remove("active");
+  linkFahrenhiet.classList.add("active");
+  let temperature = document.querySelector("#current-temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function changeCelsius(event) {
   event.preventDefault();
-  let celsiusTemperature = document.querySelector("#current-temp");
-  celsiusTemperature.innerHTML = 20;
+  linkCelsius.classList.add("active");
+  linkFahrenhiet.classList.remove("active");
+  let temperature = document.querySelector("#current-temp");
+  temperature.innerHTML = Math.round(celsiusTemperature);
 }
 
 let dateElement = document.querySelector("#date-time");
@@ -92,5 +98,13 @@ searchForm.addEventListener("submit", manageSubmit);
 
 let currentButton = document.querySelector("#current-location");
 currentButton.addEventListener("click", getCurrent);
+
+let celsiusTemperature = null;
+
+let linkFahrenhiet = document.querySelector("#link-fahrenheit");
+linkFahrenhiet.addEventListener("click", changeFahrenheit);
+
+let linkCelsius = document.querySelector("#link-celsius");
+linkCelsius.addEventListener("click", changeCelsius);
 
 searchCity("Randburg");
