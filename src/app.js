@@ -23,7 +23,6 @@ function formatDate(now) {
   return `${day} ${hour}:${minutes}`;
 }
 function showTemperature(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.temperature.current
@@ -83,7 +82,7 @@ dateElement.innerHTML = formatDate(currentTime);
 let searchForm = document.querySelector("#form-input");
 searchForm.addEventListener("submit", manageSubmit);
 
-let tempButton = document.querySelector("#current-location");
-tempButton.addEventListener("click", getCurrent);
+let currentButton = document.querySelector("#current-location");
+currentButton.addEventListener("click", getCurrent);
 
 searchCity("Randburg");
