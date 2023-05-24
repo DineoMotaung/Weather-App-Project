@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Poppins", sans-serif;
 }
 
 h1 {
@@ -42,6 +42,7 @@ li::first-letter {
   border: 1px solid #dadde1;
   border-radius: 10px;
   box-shadow: 10px 5px 5px #8a8888;
+
   padding: 20px;
   background-color: #fff;
   opacity: 0.7;
@@ -53,6 +54,7 @@ li::first-letter {
 .current-date {
   margin: 0;
   padding: 0;
+  font-weight: 700;
 }
 .temperature strong {
   font-size: 64px;
@@ -71,6 +73,9 @@ li::first-letter {
   width: 80px;
 }
 
+.current-details {
+  font-weight: 700;
+}
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
