@@ -128,25 +128,6 @@ function getCurrent(event) {
   navigator.geolocation.getCurrentPosition(displayLocation);
 }
 
-function changeFahrenheit(event) {
-  event.preventDefault();
-  linkCelsius.classList.remove("active");
-  linkFahrenhiet.classList.add("active");
-
-  let temperature = document.querySelector("#current-temp");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperature.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function changeCelsius(event) {
-  event.preventDefault();
-  linkCelsius.classList.add("active");
-  linkFahrenhiet.classList.remove("active");
-
-  let temperature = document.querySelector("#current-temp");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-}
-
 let dateElement = document.querySelector("#date-time");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
@@ -156,13 +137,5 @@ searchForm.addEventListener("submit", manageSubmit);
 
 let currentButton = document.querySelector("#current-location");
 currentButton.addEventListener("click", getCurrent);
-
-let celsiusTemperature = null;
-
-let linkFahrenhiet = document.querySelector("#link-fahrenheit");
-linkFahrenhiet.addEventListener("click", changeFahrenheit);
-
-let linkCelsius = document.querySelector("#link-celsius");
-linkCelsius.addEventListener("click", changeCelsius);
 
 searchCity("Randburg");
