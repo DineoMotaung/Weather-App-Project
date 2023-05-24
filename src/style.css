@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Courier New", Courier, monospace;
 }
 
 h1 {
@@ -54,7 +54,6 @@ li::first-letter {
 .current-date {
   margin: 0;
   padding: 0;
-  font-weight: 700;
 }
 .temperature strong {
   font-size: 64px;
@@ -73,9 +72,6 @@ li::first-letter {
   width: 80px;
 }
 
-.current-details {
-  font-weight: 700;
-}
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
