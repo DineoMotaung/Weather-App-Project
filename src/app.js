@@ -22,6 +22,40 @@ function formatDate(now) {
 
   return `${day} ${hour}:${minutes}`;
 }
+
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+                <div class="col-2">
+                  <div class="weather-forecast-date">${day}</div>
+                  <img
+                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png"
+                    alt=""
+                    width="52"
+                  />
+                  <div class="weather-forecast-temperatures">
+                    <span class="weather-forecast-temperature-max">
+                      18&deg;
+                    </span>
+                    <span class="weather-forecast-temperature-min">
+                      12&deg;
+                    </span>
+                  </div>
+                </div>
+              `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.city;
   let temperature = document.querySelector("#current-temp");
@@ -108,3 +142,4 @@ let linkCelsius = document.querySelector("#link-celsius");
 linkCelsius.addEventListener("click", changeCelsius);
 
 searchCity("Randburg");
+displayForecast();
