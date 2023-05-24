@@ -26,6 +26,9 @@ li::first-letter {
   text-transform: capitalize;
 }
 
+small {
+  font-weight: 600;
+}
 .background-img {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/082/916/original/istockphoto-1200224188-170667a.jpg?1684864278");
   background-size: cover;
